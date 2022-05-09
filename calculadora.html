@@ -49,7 +49,7 @@
 
 
 
-<div class="wrapper row3">
+<div class="wrapper row3 bgded" style="background-image:url('calcfundo.jpg');">
   <main class="hoc container clear"> 
     <div class="content calc-kwh"> 
         <div class="clear btmspace-50">
@@ -70,8 +70,14 @@
                             <input name="dias" id="dias" placeholder="Dias" type="number"/>Dias
                         </label>
                         <label for="preco">
-                          Preço do kWh
-                          <input name="preco" id="preco" placeholder="R$" type="number"/>R$
+                          Preço do kWh por Região
+                          <select name="preco" id="region">
+                            <option value=0.94>Centro-Oeste</option>
+                            <option value=0.74>Nordeste</option>
+                            <option value=0.59>Norte</option>
+                            <option value=0.56>Sudeste</option>
+                            <option value=0.31>Sul</option>
+                          </select>
                       </label>
                         <table class="calc-kwh-kwh">Consumo
                           <tbody>
@@ -169,20 +175,20 @@
 <script src="jquery.mobilemenu.js"></script>
 <script>
   $(document).ready(function() {
+    $("#region option:selected").val();
     $("#dias").val(0);
     $("#h").val(0);
     $("#potencia").val(0);
-    $("#preco").val(0);
-
-    $("#potencia,#h,#dias,#preco").keyup(function(){
+    $("#region").change(function(){calcularKwh();});
+    $("#potencia,#h,#dias,#region").keyup(function(){
         calcularKwh();
     });
 
     function calcularKwh(){
-        var potencia = $("#potencia").val();
+        var potencia = parseInt($("#potencia").val());
         var h = parseInt($("#h").val());
         var dias = parseInt($("#dias").val());
-        var preco = parseFloat($("#preco").val());
+        var preco = parseFloat($("#region").val());
         
         var resultadoKwh = (potencia*h*dias)/1000;
         var resultadoPreco = ((potencia*h*dias)/1000)*preco;
