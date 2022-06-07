@@ -18,7 +18,7 @@ html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
 .center{text-align:center;}
 .right{text-align:right;}
 .uppercase{text-transform:uppercase;}
-.capitalise{text-transform:;}
+.capitalise{text-transform:capitalize;}
 .hidden{display:none;}
 .nospace{margin:0; padding:0; list-style:none;}
 .block{display:block;}
@@ -45,6 +45,7 @@ a{outline:none; text-decoration:none;}
 
 .fl_left, .imgl{float:left;}
 .fl_right, .imgr{float:right;}
+.fl_center, .imgc{text-align:center;}
 
 img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
 .imgl{margin:0 15px 10px 0; clear:left;}
@@ -74,7 +75,7 @@ label{margin-bottom:5px;}
 
 /* Generalise
 --------------------------------------------------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:1.4rem; line-height:normal; font-weight:normal; text-transform:;font-family:Georgia, "Times New Roman", Times, serif;}
+h1, h2, h3, h4, h5, h6, .heading{margin:20px 0 20px 0; font-size:1.4rem; line-height:normal; font-weight:normal; text-transform:none;font-family:Georgia, "Times New Roman", Times, serif;}
 .heading.nospace{margin-bottom:0;}
 
 address{font-style:normal; font-weight:normal;}
